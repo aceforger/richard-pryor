@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  /* Cosmic Frontier Theme */
+  --color-space-navy: #07111f;
+  --color-cosmic-blue: #123a5a;
+  --color-ice-cyan: #62d9ff;
+  --color-star-white: #eaf7ff;
+  --color-muted-blue: #9db5c7;
+  --color-border-blue: #28516b;
+  --color-rare-gold: #d6b56d;
+  --color-deep-space: #040a14;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #07111f;
+  color: #eaf7ff;
+  overflow-x: hidden;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Starfield */
+.starfield {
+  background-image:
+    radial-gradient(1px 1px at 15% 25%, rgba(234, 247, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 45% 65%, rgba(98, 217, 255, 0.4), transparent),
+    radial-gradient(
+      1.5px 1.5px at 75% 15%,
+      rgba(234, 247, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(1px 1px at 30% 85%, rgba(98, 217, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 88% 55%, rgba(234, 247, 255, 0.4), transparent),
+    radial-gradient(
+      1.5px 1.5px at 5% 75%,
+      rgba(214, 181, 109, 0.3),
+      transparent
+    );
+  background-size: 300px 300px;
+}
+
+/* Grid overlay - spaceship HUD feel */
+.hud-grid {
+  background-image:
+    linear-gradient(rgba(98, 217, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(98, 217, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Terminal monospace */
+.terminal-font {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Scanning line effect */
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.scan-line {
+  animation: scan 8s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040a14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #28516b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #62d9ff;
+}
+
+::selection {
+  background: #62d9ff;
+  color: #07111f;
+}
